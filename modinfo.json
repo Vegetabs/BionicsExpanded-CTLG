@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "bionics_expanded",
+    "name": "Bionics Expanded",
+    "authors": [ "Vegetabs" ],
+    "maintainers": [ "Vegetabs" ],
+    "description": "A collection of various CBMs, which may or may not fit with the base game.",
+    "category": "misc_additions",
+    "dependencies": [ "tlg" ]
+  }
+]
