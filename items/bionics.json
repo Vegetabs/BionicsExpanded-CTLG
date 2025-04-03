@@ -5,7 +5,7 @@
         "type": "BIONIC_ITEM",
         "name": { "str": "Dragon's Breath CBM" },
         "looks_like": "bio_int_enhancer",
-        "description": "A specialised fluid sac has been installed in the roof of the user's mouth, which is capable of storing various sprayable chemicals. When activated a volatile glob of fluid will be launched from the user's mouth, nearly instantly dispersing into a targeted cone of gas.",
+        "description": "A specialised fluid sac has been installed in the roof of the user's mouth, which is capable of storing and emitting various chemicals in a targeted cone.",
         "price": "2500",
         "price_postapoc": "50",
         "difficulty": 3
@@ -16,7 +16,7 @@
         "type": "BIONIC_ITEM",
         "name": { "str": "Variable Dispersion Arrays CBM" },
         "looks_like": "bio_int_enhancer",
-        "description": "Large storage and venting systems have been installed within the user's torso, capable of dispersing large amounts of gas into the surrounding atmosphere continuously. A small label is placed on one of the outer vents reading: 'WARNING: System activation floods the surrounding area, including the user, with stored chemicals. USE WITH CAUTION'",
+        "description": "Multiple large storage and venting systems allow the user to disperse large amounts of gas into the surrounding atmosphere continuously.",
         "price": "9500",
         "price_postapoc": "150",
         "difficulty": 8
