@@ -13,7 +13,7 @@
   {
     "type": "SPELL",
     "id": "SPELL_SYNTH_FUNGICIDE",
-    "name": { "str": "Synthesize Tear Gas" },
+    "name": { "str": "Synthesize Fungicide" },
     "description": "Produces a unit of tear gas.",
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
