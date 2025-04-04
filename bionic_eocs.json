@@ -1,0 +1,22 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIO_dragon_breath_activated",
+    "effect": [  ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIO_VDA_activated",
+    "effect": [  ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIO_VDA_deactivated",
+    "effect": [  ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIO_chem_factory_activated",
+    "effect": [  ]
+  }
+]
