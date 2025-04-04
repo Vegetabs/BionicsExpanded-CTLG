@@ -6,8 +6,8 @@
     "name": { "str": "Dragon's Breath CBM" },
     "looks_like": "bio_int_enhancer",
     "description": "A specialised fluid sac which is installed in the roof of the user's mouth, capable of emitting various chemicals in a targeted cone.",
-    "price": "2500",
-    "price_postapoc": "50",
+    "price": "2500 USD",
+    "price_postapoc": "50 USD",
     "difficulty": 3
   },
   {
@@ -17,8 +17,8 @@
     "name": { "str": "Variable Dispersion Arrays CBM" },
     "looks_like": "bio_int_enhancer",
     "description": "Large exterior venting systems allow the user to disperse large amounts of gas into the surrounding atmosphere continuously.",
-    "price": "5000",
-    "price_postapoc": "100",
+    "price": "5000 USD",
+    "price_postapoc": "100 USD",
     "difficulty": 8
   },
   {
@@ -28,8 +28,8 @@
     "name": { "str": "Chemical Synthesizer CBM" },
     "looks_like": "bio_int_enhancer",
     "description": "A series of storage tanks connect to a 'Variable Chemical Factory' unit, capable of manufacturing a limited amount of chemicals by taking resources from a host's body.",
-    "price": "9500",
-    "price_postapoc": "150",
+    "price": "9500 USD",
+    "price_postapoc": "150 USD",
     "difficulty": 6
   }
 ]
