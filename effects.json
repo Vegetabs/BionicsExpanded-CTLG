@@ -1,23 +1,23 @@
 [
-    {
-        "type": "effect_type",
-        "id": "reserve_tear_gas",
-        "name": [ "Tear Gas Reserves" ],
-        "desc": [ "Your current reserves of tear gas (ranges from 1-10)." ],
-        "max_intensity": 10
-    },
-    {
-        "type": "effect_type",
-        "id": "reserve_fungicide",
-        "name": [ "Fungicide Reserves" ],
-        "desc": [ "Your current reserves of fungicide (ranges from 1-10)." ],
-        "max_intensity": 10
-    },
-    {
-        "type": "effect_type",
-        "id": "reserve_insecticide",
-        "name": [ "Insecticide Reserves" ],
-        "desc": [ "Your current reserves of insecticide (ranges from 1-10)." ],
-        "max_intensity": 10
-    }
+  {
+    "type": "effect_type",
+    "id": "reserve_tear_gas",
+    "name": [ "Tear Gas Reserves" ],
+    "desc": [ "Your current reserves of tear gas (ranges from 1-10)." ],
+    "max_intensity": 10
+  },
+  {
+    "type": "effect_type",
+    "id": "reserve_fungicide",
+    "name": [ "Fungicide Reserves" ],
+    "desc": [ "Your current reserves of fungicide (ranges from 1-10)." ],
+    "max_intensity": 10
+  },
+  {
+    "type": "effect_type",
+    "id": "reserve_insecticide",
+    "name": [ "Insecticide Reserves" ],
+    "desc": [ "Your current reserves of insecticide (ranges from 1-10)." ],
+    "max_intensity": 10
+  }
 ]
