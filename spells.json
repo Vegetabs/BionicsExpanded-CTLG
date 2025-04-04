@@ -1,0 +1,35 @@
+[
+  {
+    "type": "SPELL",
+    "id": "SPELL_SYNTH_TEAR_GAS",
+    "name": { "str": "Synthesize Tear Gas" },
+    "description": "Produces a unit of tear gas.",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "EOC_SYNTH_TEAR_GAS",
+    "shape": "blast",
+    "message": "Your bionic synthesizes a unit of tear gas!"
+  },
+  {
+    "type": "SPELL",
+    "id": "SPELL_SYNTH_FUNGICIDE",
+    "name": { "str": "Synthesize Tear Gas" },
+    "description": "Produces a unit of tear gas.",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "EOC_SYNTH_FUNGICIDE",
+    "shape": "blast",
+    "message": "Your bionic synthesizes a unit of fungicide!"
+  },
+  {
+    "type": "SPELL",
+    "id": "SPELL_SYNTH_INSECTICIDE",
+    "name": { "str": "Synthesize Insecticide" },
+    "description": "Produces a unit of insecticide.",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "EOC_SYNTH_INSECTICIDE",
+    "shape": "blast",
+    "message": "Your bionic synthesizes a unit of insecticide!"
+  }
+]
