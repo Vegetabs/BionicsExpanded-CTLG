@@ -24,7 +24,7 @@
   {
     "id": "bio_chem_factory",
     "type": "bionic",
-    "name": { "str": "Chemical Synthesizer CBM" },
+    "name": { "str": "Chemical Synthesizer" },
     "description": "An integrated gas emission node allows the user to fire a volatile glob of fluid will be launched from the user's mouth, nearly instantly dispersing into a targeted cone of gas. The chemicals emitted are dependent on integrated fluid reserves.",
     "occupied_bodyparts": [ [ "torso", 10 ] ],
     "activated_eocs": [ "EOC_BIO_chem_factory_activated" ],

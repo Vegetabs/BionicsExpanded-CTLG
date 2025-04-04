@@ -1,24 +1,35 @@
 [
-    {
-        "id": "bio_dragon_breath",
-        "copy-from": "bionic_general",
-        "type": "BIONIC_ITEM",
-        "name": { "str": "Dragon's Breath CBM" },
-        "looks_like": "bio_int_enhancer",
-        "description": "A specialised fluid sac has been installed in the roof of the user's mouth, which is capable of storing and emitting various chemicals in a targeted cone.",
-        "price": "2500",
-        "price_postapoc": "50",
-        "difficulty": 3
-    },
-    {
-        "id": "bio_vda",
-        "copy-from": "bionic_general",
-        "type": "BIONIC_ITEM",
-        "name": { "str": "Variable Dispersion Arrays CBM" },
-        "looks_like": "bio_int_enhancer",
-        "description": "Multiple large storage and venting systems allow the user to disperse large amounts of gas into the surrounding atmosphere continuously.",
-        "price": "9500",
-        "price_postapoc": "150",
-        "difficulty": 8
-    }
+  {
+    "id": "bio_dragon_breath",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Dragon's Breath CBM" },
+    "looks_like": "bio_int_enhancer",
+    "description": "A specialised fluid sac which is installed in the roof of the user's mouth, capable of emitting various chemicals in a targeted cone.",
+    "price": "2500",
+    "price_postapoc": "50",
+    "difficulty": 3
+  },
+  {
+    "id": "bio_vda",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Variable Dispersion Arrays CBM" },
+    "looks_like": "bio_int_enhancer",
+    "description": "Large exterior venting systems allow the user to disperse large amounts of gas into the surrounding atmosphere continuously.",
+    "price": "5000",
+    "price_postapoc": "100",
+    "difficulty": 8
+  },
+  {
+    "id": "bio_chem_factory",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Chemical Synthesizer CBM" },
+    "looks_like": "bio_int_enhancer",
+    "description": "A series of storage tanks connect to a 'Variable Chemical Factory' unit, capable of manufacturing a limited amount of chemicals by taking resources from a host's body.",
+    "price": "9500",
+    "price_postapoc": "150",
+    "difficulty": 6
+  }
 ]
