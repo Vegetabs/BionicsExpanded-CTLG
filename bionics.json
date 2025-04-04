@@ -1,23 +1,33 @@
 [
-    {
-        "id": "bio_dragon_breath",
-        "type": "bionic",
-        "name": { "str": "Dragon's Breath" },
-        "description": "An integrated gas emission node allows the user to fire a volatile glob of fluid will be launched from the user's mouth, nearly instantly dispersing into a targeted cone of gas. The chemicals emitted are dependent on integrated fluid reserves.",
-        "occupied_bodyparts": [ [ "mouth", 5 ] ],
-        "act_cost": "33 kJ"
-    },
-    {
-        "id": "bio_vda",
-        "type": "bionic",
-        "name": { "str": "Variable Dispersion Arrays" },
-        "description": "When active, this bionic will continuously disperse gasses into the surrounding atmosphere. The chemicals emitted are dependent on integrated fluid reserves. A small label is placed on one of the outer vents reading: 'WARNING: System activation floods the surrounding area, including the user, with stored chemicals. USE WITH CAUTION'",
-        "occupied_bodyparts": [ [ "torso", 12 ] ],
-        "act_cost": "20 kJ",
-        "react_cost": "20 kJ",
-        "flags": [ "BIONIC_TOGGLED" ],
-        "activated_eocs": [ "EOC_BIO_VDA_activated" ],
-        "deactivated_eocs": [ "EOC_BIO_VDA_deactivated" ],
-        "time": "1 s"
-    }
+  {
+    "id": "bio_dragon_breath",
+    "type": "bionic",
+    "name": { "str": "Dragon's Breath" },
+    "description": "An integrated gas emission node allows the user to fire a volatile glob of fluid will be launched from the user's mouth, nearly instantly dispersing into a targeted cone of gas. The chemicals emitted are dependent on integrated fluid reserves.",
+    "occupied_bodyparts": [ [ "mouth", 5 ] ],
+    "activated_eocs": [ "EOC_BIO_dragon_breath_activated" ],
+    "act_cost": "33 kJ"
+  },
+  {
+    "id": "bio_vda",
+    "type": "bionic",
+    "name": { "str": "Variable Dispersion Arrays" },
+    "description": "When active, this bionic will continuously disperse gasses into the surrounding atmosphere. The chemicals emitted are dependent on integrated fluid reserves. A small label is placed on one of the outer vents reading: 'WARNING: System activation floods the surrounding area, including the user, with stored chemicals. USE WITH CAUTION'",
+    "occupied_bodyparts": [ [ "torso", 12 ] ],
+    "act_cost": "20 kJ",
+    "react_cost": "20 kJ",
+    "flags": [ "BIONIC_TOGGLED" ],
+    "activated_eocs": [ "EOC_BIO_VDA_activated" ],
+    "deactivated_eocs": [ "EOC_BIO_VDA_deactivated" ],
+    "time": "1 s"
+  },
+  {
+    "id": "bio_chem_factory",
+    "type": "bionic",
+    "name": { "str": "Chemical Synthesizer CBM" },
+    "description": "An integrated gas emission node allows the user to fire a volatile glob of fluid will be launched from the user's mouth, nearly instantly dispersing into a targeted cone of gas. The chemicals emitted are dependent on integrated fluid reserves.",
+    "occupied_bodyparts": [ [ "torso", 10 ] ],
+    "activated_eocs": [ "EOC_BIO_chem_factory_activated" ],
+    "act_cost": "5 kJ"
+  }
 ]
