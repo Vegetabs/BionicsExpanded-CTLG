@@ -2,21 +2,36 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_dragon_breath_activated",
-    "effect": [  ]
+    "effect": {  }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_VDA_activated",
-    "effect": [  ]
+    "effect": {  }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_VDA_deactivated",
-    "effect": [  ]
+    "effect": {  }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_chem_factory_activated",
-    "effect": [  ]
+    "effect": {  }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SYNTH_TEAR_GAS",
+    "effect": { "u_add_effect": "reserve_tear_gas" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SYNTH_FUNGICIDE",
+    "effect": { "u_add_effect": "reserve_fungicide" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SYNTH_INSECTICIDE",
+    "effect": { "u_add_effect": "reserve_insecticide" }
   }
 ]
