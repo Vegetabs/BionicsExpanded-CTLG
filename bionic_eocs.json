@@ -51,6 +51,7 @@
               "then": [ { "u_add_var": "cur_intensity", "value": "" }, { "math": [ "u_cur_intensity", "=", "u_index" ] } ]
             }
           },
+          { "math": [ "u_cur_intensity", "++" ] },
           {
             "u_add_effect": { "context_val": "reserve_id" },
             "duration": "PERMANENT",
