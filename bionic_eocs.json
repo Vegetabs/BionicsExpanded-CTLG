@@ -2,36 +2,63 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_dragon_breath_activated",
-    "effect": {  }
+    "effect": { "u_message": "not implemented" }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_VDA_activated",
-    "effect": {  }
+    "effect": { "u_message": "not implemented" }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_VDA_deactivated",
-    "effect": {  }
+    "effect": { "u_message": "not implemented" }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_chem_factory_activated",
-    "effect": {  }
+    "effect": { "u_message": "not implemented" }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_SYNTH_TEAR_GAS",
-    "effect": { "u_add_effect": "reserve_tear_gas" }
+    "effect": { "run_eoc_with": "increment_reserves", "variables": { "reserve_id": "reserve_tear_gas" } }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_SYNTH_FUNGICIDE",
-    "effect": { "u_add_effect": "reserve_fungicide" }
+    "effect": { "run_eoc_with": "increment_reserves", "variables": { "reserve_id": "reserve_fungicide" } }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_SYNTH_INSECTICIDE",
-    "effect": { "u_add_effect": "reserve_insecticide" }
+    "effect": { "run_eoc_with": "increment_reserves", "variables": { "reserve_id": "reserve_insecticide" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "increment_reserves",
+    "effect": [
+      { "u_add_var": "index", "value": "1" },
+      {
+        "if": { "u_has_effect": { "context_val": "reserve_id" } },
+        "then": [
+          {
+            "foreach": "array",
+            "var": { "u_val": "index" },
+            "target": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ],
+            "effect": {
+              "if": { "u_has_effect": { "context_val": "reserve_id" }, "intensity": { "math": [ "u_index" ] } },
+              "then": [ { "u_add_var": "cur_intensity", "value": "" }, { "math": [ "u_cur_intensity", "=", "u_index" ] } ]
+            }
+          },
+          {
+            "u_add_effect": { "context_val": "reserve_id" },
+            "duration": "PERMANENT",
+            "intensity": { "math": [ "u_cur_intensity" ] }
+          }
+        ],
+        "else": { "u_add_effect": { "context_val": "reserve_id" }, "duration": "PERMANENT", "intensity": 1 }
+      }
+    ]
   }
 ]
