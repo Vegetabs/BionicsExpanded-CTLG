@@ -17,7 +17,18 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_chem_factory_activated",
-    "effect": { "u_message": "not implemented" }
+    "effect": [
+      {
+        "set_string_var": "",
+        "string_input": {
+          "title": "Input a request:",
+          "description": "== Variable Chemical Factory Synthesis Menu ==\n-1:Tear Gas\n-2:Fungicide\n-3:Insecticide\n-4:Cancel current synthesis order\n",
+          "width": 40
+        },
+        "target_var": { "context_val": "str" }
+      },
+      { "u_message": "inputted <context_val:str>" }
+    ]
   },
   {
     "type": "effect_on_condition",
@@ -30,7 +41,7 @@
     },
     "false_effect": [ 
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
-      { "u_mod_healthy": -1 },
+      { "math": [ "u_health", "-=", "1" ] },
       { "run_eoc_with": "increment_reserves", "variables": { "reserve_id": "reserve_tear_gas" } }
     ]
   },
@@ -45,7 +56,7 @@
     },
     "false_effect": [ 
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
-      { "u_mod_healthy": -1 },
+      { "math": [ "u_health", "-=", "1" ] },
       { "run_eoc_with": "increment_reserves", "variables": { "reserve_id": "reserve_fungicide" } }
     ]
   },
@@ -60,7 +71,7 @@
     },
     "false_effect": [ 
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
-      { "u_mod_healthy": -1 },
+      { "math": [ "u_health", "-=", "1" ] },
       { "run_eoc_with": "increment_reserves", "variables": { "reserve_id": "reserve_insecticide" } }
     ]
   },
