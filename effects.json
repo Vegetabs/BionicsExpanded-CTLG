@@ -19,5 +19,12 @@
     "name": [ "Insecticide Reserves" ],
     "desc": [ "Your current reserves of insecticide (ranges from 1-10)." ],
     "max_intensity": 10
+  },
+  {
+    "type": "effect_type",
+    "id": "test_synth_tear",
+    "name": [ "test synth" ],
+    "desc": [ "test" ],
+    "enchantments": [ "SYNTH_TEAR_GAS" ]
   }
 ]
