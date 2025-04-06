@@ -23,7 +23,8 @@
         "string_input": {
           "title": "Input a request:",
           "description": "== Variable Chemical Factory Synthesis Menu ==\n-1:Tear Gas\n-2:Fungicide\n-3:Insecticide\n-4:Cancel current synthesis order\n",
-          "width": 40
+          "width": 40,
+          "only_digits": true
         },
         "target_var": { "context_val": "str" }
       },
