@@ -4,20 +4,20 @@
     "id": "SYNTH_TEAR_GAS",
     "name": { "str": "Synthesizing Tear Gas" },
     "condition": "ALWAYS",
-    "intermittent_activation": { "effects": [ { "frequency": "10 minute", "spell_effects": [ { "id": "SPELL_SYNTH_TEAR_GAS" } ] } ] }
+    "intermittent_activation": { "effects": [ { "frequency": "10 minutes", "spell_effects": [ { "id": "SPELL_SYNTH_TEAR_GAS" } ] } ] }
   },
   {
     "type": "enchantment",
     "id": "SYNTH_FUNGICIDE",
     "name": { "str": "Synthesizing Fungicide" },
     "condition": "ALWAYS",
-    "intermittent_activation": { "effects": [ { "frequency": "10 minute", "spell_effects": [ { "id": "SPELL_SYNTH_FUNGICIDE" } ] } ] }
+    "intermittent_activation": { "effects": [ { "frequency": "10 minutes", "spell_effects": [ { "id": "SPELL_SYNTH_FUNGICIDE" } ] } ] }
   },
   {
     "type": "enchantment",
     "id": "SYNTH_INSECTICIDE",
     "name": { "str": "Synthesizing Insecticide" },
     "condition": "ALWAYS",
-    "intermittent_activation": { "effects": [ { "frequency": "10 minute", "spell_effects": [ { "id": "SPELL_SYNTH_INSECTICIDE" } ] } ] }
+    "intermittent_activation": { "effects": [ { "frequency": "10 minutes", "spell_effects": [ { "id": "SPELL_SYNTH_INSECTICIDE" } ] } ] }
   }
 ]
