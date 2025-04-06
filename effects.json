@@ -22,9 +22,17 @@
   },
   {
     "type": "effect_type",
-    "id": "test_synth_tear",
-    "name": [ "test synth" ],
-    "desc": [ "test" ],
+    "id": "synth_tear",
     "enchantments": [ "SYNTH_TEAR_GAS" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "synth_tear",
+    "enchantments": [ "SYNTH_FUNGICIDE" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "synth_insecticide",
+    "enchantments": [ "SYNTH_INSECTICIDE" ]
   }
 ]
