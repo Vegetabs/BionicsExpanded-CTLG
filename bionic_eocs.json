@@ -71,51 +71,51 @@
     "type": "effect_on_condition",
     "id": "EOC_SYNTH_TEAR_GAS",
     "condition": {
-      "or": [ { "math": [ "u_val('power') >= energy('10 kJ')" ] }, { "u_has_effect": "reserve_tear_gas", "intensity": "10" } ]
+      "or": [ { "math": [ "u_val('power') <= energy('10 kJ')" ] }, { "u_has_effect": "reserve_tear_gas", "intensity": 10 } ]
     },
     "effect": {
-      "if": { "u_has_effect": "reserve_tear_gas", "intensity": "10" },
+      "if": { "u_has_effect": "reserve_tear_gas", "intensity": 10 },
       "then": { "u_message": "Your tear gas reserves are full! Consider stopping synthesis." },
       "else": { "u_message": "You have insufficent power to produce tear gas! Consider stopping synthesis." }
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
       { "math": [ "u_health", "-=", "1" ] },
-      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "+=", "value": 1 } }
+      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "+=", "modifier": "1" } }
     ]
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_SYNTH_FUNGICIDE",
     "condition": {
-      "or": [ { "math": [ "u_val('power') >= energy('10 kJ')" ] }, { "u_has_effect": "reserve_fungicide", "intensity": "10" } ]
+      "or": [ { "math": [ "u_val('power') <= energy('10 kJ')" ] }, { "u_has_effect": "reserve_fungicide", "intensity": 10 } ]
     },
     "effect": {
-      "if": { "u_has_effect": "reserve_fungicide", "intensity": "10" },
+      "if": { "u_has_effect": "reserve_fungicide", "intensity": 10 },
       "then": { "u_message": "Your fungicide reserves are full! Consider stopping synthesis." },
       "else": { "u_message": "You have insufficent power to produce fungicide! Consider stopping synthesis." }
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
       { "math": [ "u_health", "-=", "1" ] },
-      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "+=", "value": 1 } }
+      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "+=", "modifier": "1" } }
     ]
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_SYNTH_INSECTICIDE",
     "condition": {
-      "or": [ { "math": [ "u_val('power') >= energy('10 kJ')" ] }, { "u_has_effect": "reserve_insecticide", "intensity": "10" } ]
+      "or": [ { "math": [ "u_val('power') <= energy('10 kJ')" ] }, { "u_has_effect": "reserve_insecticide", "intensity": 10 } ]
     },
     "effect": {
-      "if": { "u_has_effect": "reserve_insecticide", "intensity": "10" },
+      "if": { "u_has_effect": "reserve_insecticide", "intensity": 10 },
       "then": { "u_message": "Your insecticide reserves are full! Consider stopping synthesis." },
       "else": { "u_message": "You have insufficent power to produce insecticide! Consider stopping synthesis." }
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
       { "math": [ "u_health", "-=", "1" ] },
-      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "+=", "value": 1 } }
+      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "+=", "modifier": "1" } }
     ]
   },
   {
@@ -134,7 +134,11 @@
               "then": [ { "u_add_var": "cur_intensity", "value": "" }, { "math": [ "u_cur_intensity", "=", "_id" ] } ]
             }
           },
-          { "math": [ "u_cur_intensity", "<context_val:operation>", "<context_val:value>" ] },
+          {
+            "if": { "compare_string": [ { "context_val": "operation" }, "+=" ] },
+            "then": { "math": [ "u_cur_intensity", "+=", "_modifier" ] },
+            "else": { "math": [ "u_cur_intensity", "-=", "_modifier" ] }
+          },
           {
             "u_add_effect": { "context_val": "reserve_id" },
             "duration": "PERMANENT",
