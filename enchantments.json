@@ -9,14 +9,14 @@
   {
     "type": "enchantment",
     "id": "SYNTH_FUNGICIDE",
-    "name": { "str": "Synthesizing Tear Gas" },
+    "name": { "str": "Synthesizing Fungicide" },
     "condition": "ALWAYS",
     "intermittent_activation": { "effects": [ { "frequency": "10 minute", "spell_effects": [ { "id": "SPELL_SYNTH_FUNGICIDE" } ] } ] }
   },
   {
     "type": "enchantment",
     "id": "SYNTH_INSECTICIDE",
-    "name": { "str": "Synthesizing Tear Gas" },
+    "name": { "str": "Synthesizing Insecticide" },
     "condition": "ALWAYS",
     "intermittent_activation": { "effects": [ { "frequency": "10 minute", "spell_effects": [ { "id": "SPELL_SYNTH_INSECTICIDE" } ] } ] }
   }
