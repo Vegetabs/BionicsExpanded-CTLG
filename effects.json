@@ -22,12 +22,12 @@
   },
   {
     "type": "effect_type",
-    "id": "synth_tear",
+    "id": "synth_tear_gas",
     "enchantments": [ "SYNTH_TEAR_GAS" ]
   },
   {
     "type": "effect_type",
-    "id": "synth_tear",
+    "id": "synth_fungicide",
     "enchantments": [ "SYNTH_FUNGICIDE" ]
   },
   {
