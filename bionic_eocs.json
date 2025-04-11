@@ -3,7 +3,7 @@
     "type": "effect_on_condition",
     "id": "EOC_BIO_dragon_breath_activated",
     "effect": [
-      { "run_eoc_with": "EOC_check_user_input", "variables": { "prompt_desc": "== Dragon's Breath Menu ==\n- 1:Tear Gas\n- 2:Fungicide\n- 3:Insecticide\n" } },
+      { "run_eocs": "EOC_check_user_input" },
       {
         "run_eocs": {
           "id": "EOC_input_validation",
@@ -25,7 +25,6 @@
             {
               "if": { "math": [ "u_enough_in_reserve", "==", "true" ] },
               "then": [
-                { "u_message": "GAS RESERVE <u_val:cur_gas_reserve>" },
                 { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": { "u_val": "cur_gas_reserve" }, "operation": "-=", "modifier": "5" } },
                 {
                   "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
@@ -39,7 +38,6 @@
                   "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] },
                   "then": { "set_string_var": "SPELL_DRAGON_BREATH_INSECTICIDE", "target_var": { "u_val": "cur_DB_spell" } }
                 },
-                { "u_message": "DB SPELL <u_val:cur_DB_spell>" },
                 { "u_cast_spell": { "id":  { "u_val": "cur_DB_spell" } }, "targeted": true }
               ],
               "else": [
@@ -192,7 +190,6 @@
           } 
         ]
       },
-      { "u_message": "MODIFIED INTENSITY: <u_val:cur_intensity>" },
       {
         "u_add_effect": { "context_val": "reserve_id" },
         "duration": "PERMANENT",
@@ -223,7 +220,7 @@
         "set_string_var": "",
         "string_input": {
           "title": "Input an integer:",
-          "description": "_prompt_desc",
+          "description": "- 1: Tear Gas\n- 2: Fungicide\n- 3: Insecticide",
           "width": 40,
           "only_digits": true
         },
