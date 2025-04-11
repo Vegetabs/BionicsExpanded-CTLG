@@ -76,7 +76,7 @@
         "set_string_var": "",
         "string_input": {
           "title": "Input an integer:",
-          "description": "== Chemical Factory Synthesis Menu ==\n- 1:Tear Gas\n- 2:Fungicide\n- 3:Insecticide\n- 4:Cancel current synthesis order\n",
+          "description": "Chemical Factory Synthesis Menu\n- 1:Tear Gas\n- 2:Fungicide\n- 3:Insecticide\n- 4:Cancel Synthesis Order\n",
           "width": 40,
           "only_digits": true
         },
