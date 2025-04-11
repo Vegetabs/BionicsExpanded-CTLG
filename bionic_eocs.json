@@ -180,24 +180,30 @@
       {
         "if": { "compare_string": [ { "context_val": "operation" }, "+=" ] },
         "then": [ 
+          { "math": [ "u_cur_intensity", "+=", "_modifier" ] },  
           {
-            "if": { "math": [ "u_cur_intensity + _modifier", "<=", "10" ] },
-            "then": { "math": [ "u_cur_intensity", "+=", "_modifier" ]  },
-            "else": { "math": [ "u_cur_intensity", "=", "10" ] }
+            "if": { "math": [ "u_cur_intensity", ">", "10" ] },
+            "then": { "math": [ "u_cur_intensity", "=", "10" ] }
           }
         ],
         "else": [
+          { "u_message": "<u_val:cur_intensity> ... <context_val:modifier>" },
+          { "math": [ "u_cur_intensity", "-=", "_modifier" ] },
+          { "u_message": "<u_val:cur_intensity>" },
           {
-            "if": { "math": [ "u_cur_intensity - _modifier", ">=", "0" ] },
-            "then": { "math": [ "u_cur_intensity", "-=", "_modifier" ] },
-            "else": { "math": [ "u_cur_intensity", "=", "0" ] }
+            "if": { "math": [ "u_cur_intensity", "<", "0" ] },
+            "then": { "math": [ "u_cur_intensity", "=", "0" ] }
           } 
         ]
       },
       {
-        "u_add_effect": { "context_val": "reserve_id" },
-        "duration": "PERMANENT",
-        "intensity": { "math": [ "u_cur_intensity" ] }
+        "if": { "math": [ "u_cur_intensity", ">", "0" ] },
+        "then": {
+          "u_add_effect": { "context_val": "reserve_id" },
+          "duration": "PERMANENT",
+          "intensity": { "u_val": "cur_intensity" }
+        },
+        "else": { "u_lose_effect": { "context_val": "reserve_id" } }
       }
     ]
   },
