@@ -6,7 +6,8 @@
     "description": "An integrated gas emission node allows the user to fire a volatile glob of fluid will be launched from the user's mouth, nearly instantly dispersing into a targeted cone of gas. The chemicals emitted are dependent on integrated fluid reserves.",
     "occupied_bodyparts": [ [ "mouth", 5 ] ],
     "activated_eocs": [ "EOC_BIO_dragon_breath_activated" ],
-    "act_cost": "33 kJ"
+    "act_cost": "33 kJ",
+    "time": "1 s"
   },
   {
     "id": "bio_vda",
@@ -28,6 +29,7 @@
     "description": "When active, this bionic will allow the user to begin manufacturing and storing certain chemicals over time. Extended chemical synthesizing may lead to adverse health effects for the user.",
     "occupied_bodyparts": [ [ "torso", 10 ] ],
     "activated_eocs": [ "EOC_BIO_chem_factory_activated" ],
-    "act_cost": "5 kJ"
+    "act_cost": "5 kJ",
+    "time": "1 s"
   }
 ]
