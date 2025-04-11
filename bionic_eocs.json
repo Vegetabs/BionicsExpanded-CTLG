@@ -47,7 +47,11 @@
             }
           ],
           "false_effect": [
-            { "u_message": "Invalid gas option! <u_val:cur_gas_mode>" },
+            {
+              "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "0" ] },
+              "then": { "u_message": "Canceled." },
+              "else": { "u_message": "<u_val:cur_gas_mode> is an invalid gas option!" }
+            },
             { "run_eocs": "refund_power" }
           ]
         }
