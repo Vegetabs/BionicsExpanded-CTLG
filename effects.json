@@ -34,5 +34,20 @@
     "type": "effect_type",
     "id": "synth_insecticide",
     "enchantments": [ "SYNTH_INSECTICIDE" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "give_emit_tear_gas",
+    "enchantments": [ "ENCH_EMIT_TEAR_GAS" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "give_emit_fungicide",
+    "enchantments": [ "ENCH_EMIT_FUNGICIDE" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "give_emit_insecticide",
+    "enchantments": [ "ENCH_EMIT_INSECTICIDE" ]
   }
 ]
