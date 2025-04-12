@@ -4,57 +4,32 @@
     "id": "EOC_BIO_dragon_breath_activated",
     "effect": [
       { "run_eocs": "EOC_check_user_input" },
+      { "run_eoc_with": "EOC_input_validation", "variables": { "num_gas_required": "5" } },
       {
-        "run_eocs": {
-          "id": "EOC_input_validation",
-          "condition": { 
-            "or": [
-              { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
-              { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
-              { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] }
-            ] 
+        "if": { "math": [ "u_enough_in_reserve", "==", "true" ] },
+        "then": [
+          { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": { "u_val": "cur_gas_reserve" }, "operation": "-=", "modifier": "5" } },
+          {
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
+            "then": { "set_string_var": "SPELL_DRAGON_BREATH_TEAR_GAS", "target_var": { "u_val": "cur_DB_spell" } }
           },
-          "effect": [
-            { "run_eocs": [ "EOC_set_cur_gas_reserve" ] },
-            { "run_eoc_with": "EOC_check_reserve_intensity", "variables": { "effect_id": { "u_val": "cur_gas_reserve" } } },
-            {
-              "if": { "math": [ "u_cur_intensity", ">=", "5" ] },
-              "then": { "math": [ "u_enough_in_reserve", "=", "true" ] },
-              "else": { "math": [ "u_enough_in_reserve", "=", "false" ] }
-            },
-            {
-              "if": { "math": [ "u_enough_in_reserve", "==", "true" ] },
-              "then": [
-                { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": { "u_val": "cur_gas_reserve" }, "operation": "-=", "modifier": "5" } },
-                {
-                  "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
-                  "then": { "set_string_var": "SPELL_DRAGON_BREATH_TEAR_GAS", "target_var": { "u_val": "cur_DB_spell" } }
-                },
-                {
-                  "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
-                  "then": { "set_string_var": "SPELL_DRAGON_BREATH_FUNGICIDE", "target_var": { "u_val": "cur_DB_spell" } }
-                },
-                {
-                  "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] },
-                  "then": { "set_string_var": "SPELL_DRAGON_BREATH_INSECTICIDE", "target_var": { "u_val": "cur_DB_spell" } }
-                },
-                { "u_cast_spell": { "id":  { "u_val": "cur_DB_spell" } }, "targeted": true }
-              ],
-              "else": [
-                { "u_message": "Gas reserves are too low!" },
-                { "run_eocs": "refund_power" }
-              ]
-            }
-          ],
-          "false_effect": [
-            {
-              "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "0" ] },
-              "then": { "u_message": "Canceled." },
-              "else": { "u_message": "<u_val:cur_gas_mode> is an invalid gas option!" }
-            },
-            { "run_eocs": "refund_power" }
-          ]
-        }
+          {
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
+            "then": { "set_string_var": "SPELL_DRAGON_BREATH_FUNGICIDE", "target_var": { "u_val": "cur_DB_spell" } }
+          },
+          {
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] },
+            "then": { "set_string_var": "SPELL_DRAGON_BREATH_INSECTICIDE", "target_var": { "u_val": "cur_DB_spell" } }
+          },
+          { "u_cast_spell": { "id":  { "u_val": "cur_DB_spell" } }, "targeted": true }
+        ],
+        "else": [
+          {
+            "if": { "math": [ "u_latest_input_valid", "==", "true" ] },
+            "then": { "u_message": "Gas reserves are too low!" }
+          },
+          { "run_eocs": "refund_power" }
+        ]
       } 
     ]
   },
@@ -227,9 +202,7 @@
           }
         ],
         "else": [
-          { "u_message": "<u_val:cur_intensity> ... <context_val:modifier>" },
           { "math": [ "u_cur_intensity", "-=", "_modifier" ] },
-          { "u_message": "<u_val:cur_intensity>" },
           {
             "if": { "math": [ "u_cur_intensity", "<", "0" ] },
             "then": { "math": [ "u_cur_intensity", "=", "0" ] }
@@ -277,6 +250,36 @@
         "target_var": { "context_val": "str" }
       },
       { "math": [ "u_cur_gas_mode", "=", "_str" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_input_validation",
+    "condition": { 
+      "or": [
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] }
+      ] 
+    },
+    "effect": [
+      { "math": [ "u_latest_input_valid", "=", "true" ] },
+      { "run_eocs": [ "EOC_set_cur_gas_reserve" ] },
+      { "run_eoc_with": "EOC_check_reserve_intensity", "variables": { "effect_id": { "u_val": "cur_gas_reserve" } } },
+      {
+        "if": { "math": [ "u_cur_intensity", ">=", "_num_gas_required" ] },
+        "then": { "math": [ "u_enough_in_reserve", "=", "true" ] },
+        "else": { "math": [ "u_enough_in_reserve", "=", "false" ] }
+      }
+    ],
+    "false_effect": [
+      { "math": [ "u_latest_input_valid", "=", "false" ] },
+      { "math": [ "u_enough_in_reserve", "=", "false" ] },
+      {
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "0" ] },
+        "then": { "u_message": "Canceled." },
+        "else": { "u_message": "<u_val:cur_gas_mode> is an invalid gas option!" }
+      }
     ]
   },
   {
