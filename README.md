@@ -18,7 +18,7 @@ The current implemented bionics include:
 ## FAQ
 - **Q1**: I'm trying to use the Dragon's Breath/VDA bionics, and it's saying, "Gas reserves are too low!" What do I do?
     - **A1**: All gas-based bionics require the ***Chemical Synthesizer*** bionic to function, as they utilise gas reserves within the user to function.
-- **Q2**: Why is my character's health is extremely low after synthesizing chemicals?
+- **Q2**: Why is my character's health extremely low after synthesizing chemicals?
     - **A2**: Synthesizing chemicals is not free! It takes time and bionic power and reduces the user's health to simulate the bionic taking resources from the user's body.
 - **Q3**: I've been blinded after turning on the VDA?!
     - **A3**: The VDA indiscriminately disperses chemicals into the surrounding area; this also includes ***your*** tile. To prevent being affected by your dispersed chemicals, consider using a gas mask or the 'air filtration' and 'protective lenses' bionics.
