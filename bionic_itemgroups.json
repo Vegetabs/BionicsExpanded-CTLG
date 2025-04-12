@@ -1,0 +1,47 @@
+[
+    {
+        "type": "item_group",
+        "id": "bionics",
+        "copy-from": "bionics",
+        "extend": {
+            "items": [
+                [ "bio_chem_factory", 10 ],
+                [ "bio_dragon_breath", 10 ],
+                [ "bio_vda", 10 ]
+            ]
+        }
+    },
+    {
+        "type": "item_group",
+        "id": "bionics_mil",
+        "copy-from": "bionics_mil",
+        "extend": {
+            "items": [
+                [ "bio_chem_factory", 10 ],
+                [ "bio_dragon_breath", 10 ],
+                [ "bio_vda", 10 ]
+            ]
+        }
+    },
+    {
+        "id": "Zomborg_CBM_harvest_fancy_defense",
+        "type": "item_group",
+        "copy-from": "Zomborg_CBM_harvest_fancy_defense",
+        "subtype": "distribution",
+        "extend": { "entries": [ { "item": "bio_vda", "prob": 20 } ] }
+    },
+    {
+        "id": "Zomborg_CBM_harvest_ranged_weapons",
+        "type": "item_group",
+        "copy-from": "Zomborg_CBM_harvest_ranged_weapons",
+        "subtype": "distribution",
+        "extend": { "items": [ [ "bio_dragon_breath", 50 ] ] }
+    },
+    {
+        "id": "Zomborg_CBM_harvest_expensive_utilities",
+        "type": "item_group",
+        "copy-from": "Zomborg_CBM_harvest_expensive_utilities",
+        "subtype": "distribution",
+        "extend": { "items": [ [ "bio_chem_factory", 15 ] ] }   
+    }
+]
