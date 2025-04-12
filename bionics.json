@@ -6,7 +6,7 @@
     "description": "An integrated gas emission node allows the user to fire a volatile glob of fluid will be launched from the user's mouth, nearly instantly dispersing into a targeted cone of gas. The chemicals emitted are dependent on integrated fluid reserves.",
     "occupied_bodyparts": [ [ "mouth", 5 ] ],
     "activated_eocs": [ "EOC_BIO_dragon_breath_activated" ],
-    "act_cost": "33 kJ"
+    "act_cost": "30 kJ"
   },
   {
     "id": "bio_vda",
@@ -15,7 +15,7 @@
     "description": "When active, this bionic will continuously disperse gasses into the surrounding atmosphere. The chemicals emitted are dependent on integrated fluid reserves. A small label is placed on one of the outer vents reading: 'WARNING: System activation floods the surrounding area, including the user, with stored chemicals. USE WITH CAUTION'",
     "occupied_bodyparts": [ [ "torso", 12 ] ],
     "activated_eocs": [ "EOC_BIO_VDA_activated" ],
-    "act_cost": "20 kJ"
+    "act_cost": "15 kJ"
   },
   {
     "id": "bio_chem_factory",
