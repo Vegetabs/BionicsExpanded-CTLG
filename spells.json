@@ -5,6 +5,7 @@
     "name": { "str": "Synthesize Tear Gas" },
     "description": "Produces a unit of tear gas.",
     "valid_targets": [ "self" ],
+    "flags": [ "NO_FAIL" ],
     "effect": "effect_on_condition",
     "effect_str": "EOC_SYNTH_TEAR_GAS",
     "shape": "blast",
@@ -16,6 +17,7 @@
     "name": { "str": "Synthesize Fungicide" },
     "description": "Produces a unit of tear gas.",
     "valid_targets": [ "self" ],
+    "flags": [ "NO_FAIL" ],
     "effect": "effect_on_condition",
     "effect_str": "EOC_SYNTH_FUNGICIDE",
     "shape": "blast",
@@ -27,6 +29,7 @@
     "name": { "str": "Synthesize Insecticide" },
     "description": "Produces a unit of insecticide.",
     "valid_targets": [ "self" ],
+    "flags": [ "NO_FAIL" ],
     "effect": "effect_on_condition",
     "effect_str": "EOC_SYNTH_INSECTICIDE",
     "shape": "blast",
@@ -89,6 +92,7 @@
     "name": { "str": "VDA Reduce Reserves (Tear Gas)" },
     "description": "Calls an EOC to reduce your tear gas reserves.",
     "valid_targets": [ "self" ],
+    "flags": [ "NO_FAIL" ],
     "effect": "effect_on_condition",
     "effect_str": "EOC_VDA_tear_gas",
     "shape": "blast"
@@ -99,6 +103,7 @@
     "name": { "str": "VDA Reduce Reserves (Fungicide)" },
     "description": "Calls an EOC to reduce your fungicide reserves.",
     "valid_targets": [ "self" ],
+    "flags": [ "NO_FAIL" ],
     "effect": "effect_on_condition",
     "effect_str": "EOC_VDA_fungicide",
     "shape": "blast"
@@ -109,6 +114,7 @@
     "name": { "str": "VDA Reduce Reserves (Insecticide)" },
     "description": "Calls an EOC to reduce your insecticide reserves.",
     "valid_targets": [ "self" ],
+    "flags": [ "NO_FAIL" ],
     "effect": "effect_on_condition",
     "effect_str": "EOC_VDA_insecticide",
     "shape": "blast"
