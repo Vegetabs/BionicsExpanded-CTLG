@@ -19,5 +19,26 @@
     "name": { "str": "Synthesizing Insecticide" },
     "condition": "ALWAYS",
     "intermittent_activation": { "effects": [ { "frequency": "10 minutes", "spell_effects": [ { "id": "SPELL_SYNTH_INSECTICIDE" } ] } ] }
+  },
+  {
+    "type": "enchantment",
+    "id": "ENCH_EMIT_TEAR_GAS",
+    "name": { "str": "Dispersing Tear Gas" },
+    "condition": "ALWAYS",
+    "emitter": "emit_VDA_tear_gas"
+  },
+  {
+    "type": "enchantment",
+    "id": "ENCH_EMIT_FUNGICIDE",
+    "name": { "str": "Dispersing Fungicide" },
+    "condition": "ALWAYS",
+    "emitter": "emit_VDA_fungicide"
+  },
+  {
+    "type": "enchantment",
+    "id": "ENCH_EMIT_INSECTICIDE",
+    "name": { "str": "Dispersing Insecticide" },
+    "condition": "ALWAYS",
+    "emitter": "emit_VDA_insecticide"
   }
 ]
