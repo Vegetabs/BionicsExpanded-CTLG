@@ -25,20 +25,23 @@
     "id": "ENCH_EMIT_TEAR_GAS",
     "name": { "str": "Dispersing Tear Gas" },
     "condition": "ALWAYS",
-    "emitter": "emit_VDA_tear_gas"
+    "emitter": "emit_VDA_tear_gas",
+    "intermittent_activation": { "effects": [ { "frequency": "1 s", "spell_effects": [ { "id": "SPELL_VDA_TEAR_GAS" } ] } ] }
   },
   {
     "type": "enchantment",
     "id": "ENCH_EMIT_FUNGICIDE",
     "name": { "str": "Dispersing Fungicide" },
     "condition": "ALWAYS",
-    "emitter": "emit_VDA_fungicide"
+    "emitter": "emit_VDA_fungicide",
+    "intermittent_activation": { "effects": [ { "frequency": "1 s", "spell_effects": [ { "id": "SPELL_VDA_FUNGICIDE" } ] } ] }
   },
   {
     "type": "enchantment",
     "id": "ENCH_EMIT_INSECTICIDE",
     "name": { "str": "Dispersing Insecticide" },
     "condition": "ALWAYS",
-    "emitter": "emit_VDA_insecticide"
+    "emitter": "emit_VDA_insecticide",
+    "intermittent_activation": { "effects": [ { "frequency": "1 s", "spell_effects": [ { "id": "SPELL_VDA_INSECTICIDE" } ] } ] }
   }
 ]

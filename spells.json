@@ -82,5 +82,35 @@
     "max_aoe": 30,
     "min_range": 6,
     "max_range": 6
+  },
+  {
+    "type": "SPELL",
+    "id": "SPELL_VDA_TEAR_GAS",
+    "name": { "str": "VDA Reduce Reserves (Tear Gas)" },
+    "description": "Calls an EOC to reduce your tear gas reserves.",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "EOC_VDA_tear_gas",
+    "shape": "blast"
+  },
+  {
+    "type": "SPELL",
+    "id": "SPELL_VDA_FUNGICIDE",
+    "name": { "str": "VDA Reduce Reserves (Fungicide)" },
+    "description": "Calls an EOC to reduce your fungicide reserves.",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "EOC_VDA_fungicide",
+    "shape": "blast"
+  },
+  {
+    "type": "SPELL",
+    "id": "SPELL_VDA_INSECTICIDE",
+    "name": { "str": "VDA Reduce Reserves (Insecticide)" },
+    "description": "Calls an EOC to reduce your insecticide reserves.",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "EOC_VDA_insecticide",
+    "shape": "blast"
   }
 ]

@@ -36,7 +36,10 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_VDA_activated",
-    "effect": { "u_message": "not implemented" }
+    "effect": [
+      { "run_eocs": "EOC_check_user_input" },
+      { "run_eoc_with": "EOC_input_validation", "variables": { "num_gas_required": "1" } }
+    ]
   },
   {
     "type": "effect_on_condition",
@@ -186,6 +189,21 @@
       { "math": [ "u_health", "-=", "5" ] },
       { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "+=", "modifier": "1" } }
     ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_VDA_tear_gas",
+    "effect": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_VDA_fungicide",
+    "effect": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_VDA_insecticide",
+    "effect": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } }
   },
   {
     "type": "effect_on_condition",
