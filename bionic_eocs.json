@@ -53,15 +53,15 @@
         "then": [
           {
             "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
-            "then": [ { "u_add_effect": "give_emit_tear_gas" }, { "u_message": "You start emitting tear gas." } ]
+            "then": [ { "u_add_effect": "give_emit_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start emitting tear gas." } ]
           },
           {
             "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
-            "then": [ { "u_add_effect": "give_emit_fungicide" }, { "u_message": "You start emitting fungicide." } ]
+            "then": [ { "u_add_effect": "give_emit_fungicide", "duration": "PERMANENT" }, { "u_message": "You start emitting fungicide." } ]
           },
           {
             "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] },
-            "then": [ { "u_add_effect": "give_emit_insecticide" }, { "u_message": "You start emitting insecticide." } ]
+            "then": [ { "u_add_effect": "give_emit_insecticide", "duration": "PERMANENT" }, { "u_message": "You start emitting insecticide." } ]
           }
         ],
         "else": [
