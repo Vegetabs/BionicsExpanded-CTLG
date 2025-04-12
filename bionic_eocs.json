@@ -81,7 +81,21 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_VDA_deactivated",
-    "effect": { "u_message": "not implemented" }
+    "condition": { 
+      "or": [
+        { "u_has_effect": "give_emit_tear_gas" },
+        { "u_has_effect": "give_emit_fungicide" },
+        { "u_has_effect": "give_emit_insecticide" }
+      ] 
+    },
+    "effect": [
+      { "u_lose_effect": "give_emit_tear_gas" },
+      { "u_lose_effect": "give_emit_fungicide" },
+      { "u_lose_effect": "give_emit_insecticide" }
+    ],
+    "false_effect": [
+      { "u_message": "Error! VDA activated without user having emitting effect!" }
+    ]
   },
   {
     "type": "effect_on_condition",
@@ -233,7 +247,7 @@
     "effect": {
       "if": { "u_has_effect": "reserve_tear_gas" },
       "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } },
-      "else": [ { "u_lose_effect": "give_emit_tear_gas" }, { "u_message": "Tear gas reserves are empty: VDA shutting down." } ]
+      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Tear gas reserves are empty: VDA shutting down." } ]
     }
   },
   {
@@ -242,7 +256,7 @@
     "effect": {
       "if": { "u_has_effect": "reserve_fungicide" },
       "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } },
-      "else": [ { "u_lose_effect": "give_emit_fungicide" }, { "u_message": "Fungicide reserves are empty: VDA shutting down." } ]
+      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Fungicide reserves are empty: VDA shutting down." } ]
     }
   },
   {
@@ -251,7 +265,7 @@
     "effect": {
       "if": { "u_has_effect": "reserve_insecticide" },
       "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } },
-      "else": [ { "u_lose_effect": "give_emit_insecticide" }, { "u_message": "Insecticide reserves are empty: VDA shutting down." } ]
+      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Insecticide reserves are empty: VDA shutting down." } ]
     }
   },
   {
@@ -291,13 +305,14 @@
     "type": "effect_on_condition",
     "id": "EOC_check_reserve_intensity",
     "effect": [
+      { "math": [ "u_cur_intensity", "=", "0" ] },
       {
         "foreach": "array",
         "var": { "context_val": "id" },
         "target": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ],
         "effect": {
           "if": { "u_has_effect": { "context_val": "effect_id" }, "intensity": { "math": [ "_id" ] } },
-          "then": [ { "math": [ "u_cur_intensity", "=", "" ] }, { "math": [ "u_cur_intensity", "=", "_id" ] } ]
+          "then": { "math": [ "u_cur_intensity", "=", "_id" ] }
         }
       }
     ]
