@@ -16,6 +16,8 @@ The current implemented bionics include:
 - **A1**: All gas-based bionics require the ***Chemical Synthesizer*** bionic to function, as they utilise gas reserves within the user to function.
 - **Q2**: Why is my character's health is extremely low after synthesizing chemicals?
 - **A2**: Synthesizing chemicals is not free! It takes time and bionic power and reduces the user's health to simulate the bionic taking resources from the user's body.
+- **Q3**: I've been blinded after turning on the VDA?!
+- **A3**: The VDA indiscriminately disperses chemicals into the surrounding area; this also includes ***your*** tile. To prevent being affected by your dispersed chemicals, consider using a gas mask or the 'air filtration' and 'protective lenses' bionics.
 
 ### Found a Bug?
 If you find a bug/crash which you believe may be caused by this mod, make sure to either:
