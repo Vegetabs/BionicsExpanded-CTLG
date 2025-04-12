@@ -1,0 +1,23 @@
+[
+    {
+        "id": "emit_VDA_tear_gas",
+        "type": "emit",
+        "field": "fd_tear_gas",
+        "intensity": 4,
+        "qty": 100
+    },
+    {
+        "id": "emit_VDA_fungicide",
+        "type": "emit",
+        "field": "fd_fungicidal_gas",
+        "intensity": 4,
+        "qty": 100
+    },
+    {
+        "id": "emit_VDA_insecticide",
+        "type": "emit",
+        "field": "fd_insecticidal_gas",
+        "intensity": 4,
+        "qty": 100
+    }
+]
