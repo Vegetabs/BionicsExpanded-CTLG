@@ -101,95 +101,50 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_BIO_chem_factory_activated",
+    "condition": { "not": { "or": [ { "u_has_effect": "synth_tear_gas" }, { "u_has_effect": "synth_fungicide" }, { "u_has_effect": "synth_insecticide" } ] } },
     "effect": [
-      {
-        "set_string_var": "",
-        "string_input": {
-          "title": "Input an integer:",
-          "description": "Chemical Factory Synthesis Menu\n- 1:Tear Gas\n- 2:Fungicide\n- 3:Insecticide\n- 4:Cancel Synthesis Order\n",
-          "width": 40,
-          "only_digits": true
-        },
-        "target_var": { "context_val": "str" }
-      },
-      { "run_eoc_with": "check_for_synth", "variables": { "request_num": { "context_val": "str" } } }
+      { "run_eocs": "EOC_check_user_input" },
+      { "run_eocs": "EOC_synth_validation" }
+    ],
+    "false_effect": [
+      { "u_lose_effect": "synth_tear_gas" },
+      { "u_lose_effect": "synth_fungicide" },
+      { "u_lose_effect": "synth_insecticide" },
+      { "u_message": "You stop synthesizing chemicals." },
+      { "run_eocs": "refund_power" }
     ]
   },
   {
     "type": "effect_on_condition",
-    "id": "check_for_synth",
+    "id": "EOC_synth_validation",
     "condition": {
-      "or": [ { "u_has_effect": "synth_tear_gas" }, { "u_has_effect": "synth_fungicide" }, { "u_has_effect": "synth_insecticide" } ]
+      "or": [
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] }
+      ] 
     },
-    "effect": {
-      "run_eocs": {
-        "id": "EOC_check_if_cancel_valid",
-        "condition": { 
-          "or": [
-            { "compare_string": [ { "context_val": "request_num" }, "1" ] },
-            { "compare_string": [ { "context_val": "request_num" }, "2" ] },
-            { "compare_string": [ { "context_val": "request_num" }, "3" ] }
-          ] 
-        },
-        "effect": [
-          { "u_message": "You can't have multiple synthesis requests!" }, 
-          { "run_eocs": "refund_power" }
-        ],
-        "false_effect": {
-          "if": { "compare_string": [ { "context_val": "request_num" }, "4" ] },
-          "then": [
-            {  
-              "foreach": "array",
-              "var": { "context_val": "id" },
-              "target": [ "synth_tear_gas", "synth_fungicide", "synth_insecticide" ],
-              "effect": { "u_lose_effect": { "context_val": "id" } }
-            },
-            { "u_message": "You stop synthesizing chemicals." }
-          ],
-          "else": [
-            { "u_message": "Invalid synthesis order!" },
-            { "run_eocs": "refund_power" }
-          ]
-        }
-      }
-    },
-    "false_effect": {
-      "run_eocs": {
-        "id": "EOC_check_if_new_synth_valid",
-        "condition": {
-          "or": [
-            { "compare_string": [ { "context_val": "request_num" }, "1" ] },
-            { "compare_string": [ { "context_val": "request_num" }, "2" ] },
-            { "compare_string": [ { "context_val": "request_num" }, "3" ] }
-          ]
-        },
-        "effect": [
-          {
-            "if": { "compare_string": [ { "context_val": "request_num" }, "1" ] },
-            "then": [ { "u_add_effect": "synth_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start synthesizing tear gas." } ]
-          },
-          {
-            "if": { "compare_string": [ { "context_val": "request_num" }, "2" ] },
-            "then": [ { "u_add_effect": "synth_fungicide", "duration": "PERMANENT" }, { "u_message": "You start synthesizing fungicide." } ]
-          },
-          {
-            "if": { "compare_string": [ { "context_val": "request_num" }, "3" ] },
-            "then": [
-              { "u_add_effect": "synth_insecticide", "duration": "PERMANENT" },
-              { "u_message": "You start synthesizing insecticide." }
-            ]
-          }
-        ],
-        "false_effect": [
-          {
-            "if": { "compare_string": [ { "context_val": "request_num" }, "4" ] },
-            "then": { "u_message": "You don't have any synthesis order to cancel!" },
-            "else": { "u_message": "Invalid synthesis order!" }
-          },
-          { "run_eocs": "refund_power" }
+    "effect": [
+      {
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
+        "then": [ { "u_add_effect": "synth_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start synthesizing tear gas." } ]
+      },
+      {
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
+        "then": [ { "u_add_effect": "synth_fungicide", "duration": "PERMANENT" }, { "u_message": "You start synthesizing fungicide." } ]
+      },
+      {
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] },
+        "then": [
+          { "u_add_effect": "synth_insecticide", "duration": "PERMANENT" },
+          { "u_message": "You start synthesizing insecticide." }
         ]
       }
-    }
+    ],
+    "false_effect": [
+      { "u_message": "Invalid synthesis request!" },
+      { "run_eocs": "refund_power" }
+    ]
   },
   {
     "type": "effect_on_condition",
