@@ -1,17 +1,20 @@
 # Bionics Expanded
 *Bionics Expanded* (BE) is a content mod for *Cataclysm: The Last Generation* (CTLG), consisting of bionics which I just thought would be fun to create. 
 
-### Content
+## Content
 The current implemented bionics include:
 - Chemical Synthesis CBM
 - Dragon's Breath CBM
 - Variable Dispersion Arrays CBM
 
-### Installation Instructions
+## Installation Instructions
 1. Download the src code in the latest mod release
 2. Unzip the file in the 'data\mods' directory
 
-### FAQ
+## Known Issues
+1. User input prompt for the bionics has a bunch of prewritten integers. Really annoying to deal with and caused by the current EOC infrastructure of TLG; don't worry, I've already created a TLG GitHub issue about it, and hopefully it should be solved soon.
+
+## FAQ
 - **Q1**: I'm trying to use the Dragon's Breath/VDA bionics, and it's saying, "Gas reserves are too low!" What do I do?
     - **A1**: All gas-based bionics require the ***Chemical Synthesizer*** bionic to function, as they utilise gas reserves within the user to function.
 - **Q2**: Why is my character's health is extremely low after synthesizing chemicals?
@@ -21,10 +24,10 @@ The current implemented bionics include:
 - **Q4**: Why did [insert bionic] not do anything when I activated it?
     - **A4**: This could be a range of things, such as not having sufficient bionic power, sufficient gas reserves, or the bionic's behavior changing due to a previous action. If you're using the VDA or Chemical Synthesizer, the bionic will behave differently if you have a current order active, so make sure to check the message log to see if it's canceling your current order. If none of these apply, please create a GitHub issue or notify me directly.
 
-### Found a Bug?
+## Found a Bug?
 If you find a bug/crash which you believe may be caused by this mod, make sure to either:
 - Create a GitHub issue
 - DM me directly or ping me on the TLG server
 
-### Confused About a Mod Feature?
+## Confused About a Mod Feature?
 Any questions you might have can be directed at me through DM-ing or pinging me through discord. I'll (probably) respond in a timely manner if I'm not sleeping or otherwise busy.
