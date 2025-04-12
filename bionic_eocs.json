@@ -193,17 +193,29 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_VDA_tear_gas",
-    "effect": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } }
+    "effect": {
+      "if": { "u_has_effect": "reserve_tear_gas" },
+      "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } },
+      "else": [ { "u_lose_effect": "give_emit_tear_gas" }, { "u_message": "Tear gas reserves are empty: VDA shutting down." } ]
+    }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_VDA_fungicide",
-    "effect": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } }
+    "effect": {
+      "if": { "u_has_effect": "reserve_fungicide" },
+      "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } },
+      "else": [ { "u_lose_effect": "give_emit_fungicide" }, { "u_message": "Fungicide reserves are empty: VDA shutting down." } ]
+    }
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_VDA_insecticide",
-    "effect": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } }
+    "effect": {
+      "if": { "u_has_effect": "reserve_insecticide" },
+      "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } },
+      "else": [ { "u_lose_effect": "give_emit_insecticide" }, { "u_message": "Insecticide reserves are empty: VDA shutting down." } ]
+    }
   },
   {
     "type": "effect_on_condition",
