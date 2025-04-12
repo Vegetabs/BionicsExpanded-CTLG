@@ -47,10 +47,10 @@
     "min_field_intensity": 4,
     "max_field_intensity": 4,
     "shape": "cone",
-    "min_aoe": 30,
-    "max_aoe": 30,
-    "min_range": 6,
-    "max_range": 6
+    "min_aoe": 60,
+    "max_aoe": 60,
+    "min_range": 5,
+    "max_range": 5
   },
   {
     "type": "SPELL",
@@ -64,10 +64,10 @@
     "min_field_intensity": 4,
     "max_field_intensity": 4,
     "shape": "cone",
-    "min_aoe": 30,
-    "max_aoe": 30,
-    "min_range": 6,
-    "max_range": 6
+    "min_aoe": 60,
+    "max_aoe": 60,
+    "min_range": 5,
+    "max_range": 5
   },
   {
     "type": "SPELL",
@@ -81,10 +81,10 @@
     "min_field_intensity": 4,
     "max_field_intensity": 4,
     "shape": "cone",
-    "min_aoe": 30,
-    "max_aoe": 30,
-    "min_range": 6,
-    "max_range": 6
+    "min_aoe": 60,
+    "max_aoe": 60,
+    "min_range": 5,
+    "max_range": 5
   },
   {
     "type": "SPELL",
