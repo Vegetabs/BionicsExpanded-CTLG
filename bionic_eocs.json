@@ -46,6 +46,7 @@
       } 
     },
     "effect": [
+      { "run_eocs": "refund_power" },
       { "run_eocs": "EOC_check_user_input" },
       { "run_eoc_with": "EOC_input_validation", "variables": { "num_gas_required": "1" } },
       {
@@ -68,13 +69,13 @@
           {
             "if": { "math": [ "u_latest_input_valid", "==", "true" ] },
             "then": { "u_message": "Gas reserves are too low!" }
-          },
-          { "run_eocs": "refund_power" }
+          }
         ]
       }
     ],
     "false_effect": [
-      { "u_message": "VDA is already emitting gasses!" },
+      { "run_eocs": "EOC_BIO_VDA_deactivated" },
+      { "u_message": "VDA shtting down." },
       { "run_eocs": "refund_power" }
     ]
   },
@@ -94,7 +95,7 @@
       { "u_lose_effect": "give_emit_insecticide" }
     ],
     "false_effect": [
-      { "u_message": "Error! VDA activated without user having emitting effect!" }
+      { "u_message": "Error! VDA deactivated without user having emitting effect!" }
     ]
   },
   {
@@ -244,29 +245,35 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_VDA_tear_gas",
+    "condition": { "math": [ "u_val('power')", ">=", "energy('15 kJ')" ] },
     "effect": {
       "if": { "u_has_effect": "reserve_tear_gas" },
-      "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } },
+      "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
       "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Tear gas reserves are empty: VDA shutting down." } ]
-    }
+    },
+    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down." } ]
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_VDA_fungicide",
+    "condition": { "math": [ "u_val('power')", ">=", "energy('15 kJ')" ] },
     "effect": {
       "if": { "u_has_effect": "reserve_fungicide" },
-      "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } },
+      "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
       "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Fungicide reserves are empty: VDA shutting down." } ]
-    }
+    },
+    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down." } ]
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_VDA_insecticide",
+    "condition": { "math": [ "u_val('power')", ">=", "energy('15 kJ')" ] },
     "effect": {
       "if": { "u_has_effect": "reserve_insecticide" },
-      "then": { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } },
+      "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
       "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Insecticide reserves are empty: VDA shutting down." } ]
-    }
+    },
+    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down." } ]
   },
   {
     "type": "effect_on_condition",
