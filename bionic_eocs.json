@@ -10,15 +10,15 @@
         "then": [
           { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": { "u_val": "cur_gas_reserve" }, "operation": "-=", "modifier": "5" } },
           {
-            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
             "then": { "set_string_var": "SPELL_DRAGON_BREATH_TEAR_GAS", "target_var": { "u_val": "cur_DB_spell" } }
           },
           {
-            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
             "then": { "set_string_var": "SPELL_DRAGON_BREATH_FUNGICIDE", "target_var": { "u_val": "cur_DB_spell" } }
           },
           {
-            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] },
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] },
             "then": { "set_string_var": "SPELL_DRAGON_BREATH_INSECTICIDE", "target_var": { "u_val": "cur_DB_spell" } }
           },
           { "u_cast_spell": { "id":  { "u_val": "cur_DB_spell" } }, "targeted": true }
@@ -53,15 +53,15 @@
         "if": { "math": [ "u_enough_in_reserve", "==", "true" ] },
         "then": [
           {
-            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
             "then": [ { "u_add_effect": "give_emit_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start emitting tear gas." } ]
           },
           {
-            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
             "then": [ { "u_add_effect": "give_emit_fungicide", "duration": "PERMANENT" }, { "u_message": "You start emitting fungicide." } ]
           },
           {
-            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] },
+            "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] },
             "then": [ { "u_add_effect": "give_emit_insecticide", "duration": "PERMANENT" }, { "u_message": "You start emitting insecticide." } ]
           }
         ],
@@ -119,22 +119,22 @@
     "id": "EOC_synth_validation",
     "condition": {
       "or": [
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] }
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] }
       ] 
     },
     "effect": [
       {
-        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
         "then": [ { "u_add_effect": "synth_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start synthesizing tear gas." } ]
       },
       {
-        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
         "then": [ { "u_add_effect": "synth_fungicide", "duration": "PERMANENT" }, { "u_message": "You start synthesizing fungicide." } ]
       },
       {
-        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] },
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] },
         "then": [
           { "u_add_effect": "synth_insecticide", "duration": "PERMANENT" },
           { "u_message": "You start synthesizing insecticide." }
@@ -142,7 +142,11 @@
       }
     ],
     "false_effect": [
-      { "u_message": "Invalid synthesis request!" },
+      {
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "" ] },
+        "then": { "u_message": "Canceled." },
+        "else": { "u_message": "<u_val:cur_gas_mode> is not a valid synthesis request!" }
+      },
       { "run_eocs": "refund_power" }
     ]
   },
@@ -286,14 +290,13 @@
       {
         "set_string_var": "",
         "string_input": {
-          "title": "Input an integer:",
-          "description": "- 1: Tear Gas\n- 2: Fungicide\n- 3: Insecticide",
-          "width": 40,
-          "only_digits": true
+          "title": "Input a letter:",
+          "description": "- [a]: Tear Gas\n- [b]: Fungicide\n- [c]: Insecticide",
+          "width": 40
         },
         "target_var": { "context_val": "str" }
       },
-      { "math": [ "u_cur_gas_mode", "=", "_str" ] }
+      { "set_string_var": { "context_val": "str" }, "target_var": { "u_val": "cur_gas_mode" } }
     ]
   },
   {
@@ -301,9 +304,9 @@
     "id": "EOC_input_validation",
     "condition": { 
       "or": [
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "1" ] },
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "2" ] },
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "3" ] }
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
+        { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] }
       ] 
     },
     "effect": [
@@ -320,7 +323,7 @@
       { "math": [ "u_latest_input_valid", "=", "false" ] },
       { "math": [ "u_enough_in_reserve", "=", "false" ] },
       {
-        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "0" ] },
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "" ] },
         "then": { "u_message": "Canceled." },
         "else": { "u_message": "<u_val:cur_gas_mode> is an invalid gas option!" }
       }
@@ -331,15 +334,15 @@
     "id": "EOC_set_cur_gas_reserve",
     "effect": [
       {
-        "if": { "math": [ "u_cur_gas_mode", "==", "1" ] },
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
         "then": { "set_string_var": "reserve_tear_gas", "target_var": { "u_val": "cur_gas_reserve" } }
       },
       {
-        "if": { "math": [ "u_cur_gas_mode", "==", "2" ] },
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
         "then": { "set_string_var": "reserve_fungicide", "target_var": { "u_val": "cur_gas_reserve" } }
       },
       {
-        "if": { "math": [ "u_cur_gas_mode", "==", "3" ] },
+        "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] },
         "then": { "set_string_var": "reserve_insecticide", "target_var": { "u_val": "cur_gas_reserve" } }
       }
     ]
