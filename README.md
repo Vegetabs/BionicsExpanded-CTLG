@@ -12,8 +12,7 @@ The current implemented bionics include:
 2. Unzip the file in the 'data\mods' directory
 
 ## Known Issues
-1. User input prompt for the bionics has a bunch of prewritten integers. Really annoying to deal with and caused by the current EOC infrastructure of TLG; don't worry, I've already created a TLG GitHub issue about it, and hopefully it should be solved soon. For now, hold backspace or delete until you've cleared the input field, then write your actual input.
-2. Spells cast through the enchantment 'intermittent_activation' feature sometimes activate at irregular times. I'm pretty sure this one isn't my fault, but it ultimately isn't ***that*** impactful to regular gameplay if you don't know the intended synthesis times.
+1. Spells cast through the enchantment 'intermittent_activation' feature sometimes activate at irregular times. I'm pretty sure this one isn't my fault, but it ultimately isn't ***that*** impactful to regular gameplay if you don't know the intended synthesis times.
 
 ## FAQ
 - **Q1**: I'm trying to use the Dragon's Breath/VDA bionics, and it's saying, "Gas reserves are too low!" What do I do?
