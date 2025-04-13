@@ -26,7 +26,7 @@
         "else": [
           {
             "if": { "math": [ "u_latest_input_valid", "==", "true" ] },
-            "then": { "u_message": "Gas reserves are too low!" }
+            "then": { "u_message": "Gas reserves are too low!", "type": "warning" }
           },
           { "run_eocs": "refund_power" }
         ]
@@ -54,21 +54,21 @@
         "then": [
           {
             "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
-            "then": [ { "u_add_effect": "give_emit_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start emitting tear gas." } ]
+            "then": [ { "u_add_effect": "give_emit_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start emitting tear gas.", "type": "good" } ]
           },
           {
             "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
-            "then": [ { "u_add_effect": "give_emit_fungicide", "duration": "PERMANENT" }, { "u_message": "You start emitting fungicide." } ]
+            "then": [ { "u_add_effect": "give_emit_fungicide", "duration": "PERMANENT" }, { "u_message": "You start emitting fungicide.", "type": "good" } ]
           },
           {
             "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] },
-            "then": [ { "u_add_effect": "give_emit_insecticide", "duration": "PERMANENT" }, { "u_message": "You start emitting insecticide." } ]
+            "then": [ { "u_add_effect": "give_emit_insecticide", "duration": "PERMANENT" }, { "u_message": "You start emitting insecticide.", "type": "good" } ]
           }
         ],
         "else": [
           {
             "if": { "math": [ "u_latest_input_valid", "==", "true" ] },
-            "then": { "u_message": "Gas reserves are too low!" }
+            "then": { "u_message": "Gas reserves are too low!", "type": "warning" }
           }
         ]
       }
@@ -95,7 +95,7 @@
       { "u_lose_effect": "give_emit_insecticide" }
     ],
     "false_effect": [
-      { "u_message": "Error! VDA deactivated without user having emitting effect!" }
+      { "u_message": "Error! VDA deactivated without user having emitting effect!", "type": "bad" }
     ]
   },
   {
@@ -127,17 +127,17 @@
     "effect": [
       {
         "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
-        "then": [ { "u_add_effect": "synth_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start synthesizing tear gas." } ]
+        "then": [ { "u_add_effect": "synth_tear_gas", "duration": "PERMANENT" }, { "u_message": "You start synthesizing tear gas.", "type": "good" } ]
       },
       {
         "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
-        "then": [ { "u_add_effect": "synth_fungicide", "duration": "PERMANENT" }, { "u_message": "You start synthesizing fungicide." } ]
+        "then": [ { "u_add_effect": "synth_fungicide", "duration": "PERMANENT" }, { "u_message": "You start synthesizing fungicide.", "type": "good" } ]
       },
       {
         "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] },
         "then": [
           { "u_add_effect": "synth_insecticide", "duration": "PERMANENT" },
-          { "u_message": "You start synthesizing insecticide." }
+          { "u_message": "You start synthesizing insecticide.", "type": "good" }
         ]
       }
     ],
@@ -145,7 +145,7 @@
       {
         "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "" ] },
         "then": { "u_message": "Canceled." },
-        "else": { "u_message": "<u_val:cur_gas_mode> is not a valid synthesis request!" }
+        "else": { "u_message": "<u_val:cur_gas_mode> is not a valid synthesis request!", "type": "warning" }
       },
       { "run_eocs": "refund_power" }
     ]
@@ -158,8 +158,8 @@
     },
     "effect": {
       "if": { "u_has_effect": "reserve_tear_gas", "intensity": 10 },
-      "then": { "u_message": "Your tear gas reserves are full! Consider stopping synthesis." },
-      "else": { "u_message": "You have insufficent power to produce tear gas! Consider stopping synthesis." }
+      "then": { "u_message": "Your tear gas reserves are full! Consider stopping synthesis.", "type": "warning" },
+      "else": { "u_message": "You have insufficent power to produce tear gas! Consider stopping synthesis.", "type": "warning" }
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
@@ -175,8 +175,8 @@
     },
     "effect": {
       "if": { "u_has_effect": "reserve_fungicide", "intensity": 10 },
-      "then": { "u_message": "Your fungicide reserves are full! Consider stopping synthesis." },
-      "else": { "u_message": "You have insufficent power to produce fungicide! Consider stopping synthesis." }
+      "then": { "u_message": "Your fungicide reserves are full! Consider stopping synthesis.", "type": "warning" },
+      "else": { "u_message": "You have insufficent power to produce fungicide! Consider stopping synthesis.", "type": "warning" }
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
@@ -192,8 +192,8 @@
     },
     "effect": {
       "if": { "u_has_effect": "reserve_insecticide", "intensity": 10 },
-      "then": { "u_message": "Your insecticide reserves are full! Consider stopping synthesis." },
-      "else": { "u_message": "You have insufficent power to produce insecticide! Consider stopping synthesis." }
+      "then": { "u_message": "Your insecticide reserves are full! Consider stopping synthesis.", "type": "warning" },
+      "else": { "u_message": "You have insufficent power to produce insecticide! Consider stopping synthesis.", "type": "warning" }
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
@@ -208,9 +208,9 @@
     "effect": {
       "if": { "u_has_effect": "reserve_tear_gas" },
       "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
-      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Tear gas reserves are empty: VDA shutting down." } ]
+      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Tear gas reserves are empty: VDA shutting down.", "type": "warning" } ]
     },
-    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down." } ]
+    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down.", "type": "warning" } ]
   },
   {
     "type": "effect_on_condition",
@@ -219,9 +219,9 @@
     "effect": {
       "if": { "u_has_effect": "reserve_fungicide" },
       "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
-      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Fungicide reserves are empty: VDA shutting down." } ]
+      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Fungicide reserves are empty: VDA shutting down.", "type": "warning" } ]
     },
-    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down." } ]
+    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down.", "type": "warning" } ]
   },
   {
     "type": "effect_on_condition",
@@ -230,9 +230,9 @@
     "effect": {
       "if": { "u_has_effect": "reserve_insecticide" },
       "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
-      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Insecticide reserves are empty: VDA shutting down." } ]
+      "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Insecticide reserves are empty: VDA shutting down.", "type": "warning" } ]
     },
-    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down." } ]
+    "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down.", "type": "warning" } ]
   },
   {
     "type": "effect_on_condition",
@@ -325,7 +325,7 @@
       {
         "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "" ] },
         "then": { "u_message": "Canceled." },
-        "else": { "u_message": "<u_val:cur_gas_mode> is an invalid gas option!" }
+        "else": { "u_message": "<u_val:cur_gas_mode> is an invalid gas option!", "type": "warning" }
       }
     ]
   },
