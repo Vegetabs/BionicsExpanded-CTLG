@@ -7,7 +7,8 @@
             "items": [
                 [ "bio_chem_factory", 10 ],
                 [ "bio_dragon_breath", 10 ],
-                [ "bio_vda", 10 ]
+                [ "bio_vda", 10 ],
+                [ "bio_int_overloader", 10 ]
             ]
         }
     },
@@ -43,5 +44,12 @@
         "copy-from": "Zomborg_CBM_harvest_expensive_utilities",
         "subtype": "distribution",
         "extend": { "items": [ [ "bio_chem_factory", 15 ] ] }   
+    },
+    {
+        "id": "Zomborg_CBM_harvest_stat_enhancements",
+        "type": "item_group",
+        "copy-from": "Zomborg_CBM_harvest_stat_enhancements",
+        "subtype": "distribution",
+        "extend": { "entries": [ { "item": "bio_int_overloader", "prob": 20 } ] }
     }
 ]

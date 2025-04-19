@@ -25,5 +25,14 @@
     "occupied_bodyparts": [ [ "torso", 10 ] ],
     "activated_eocs": [ "EOC_BIO_chem_factory_activated" ],
     "act_cost": "5 kJ"
+  },
+  {
+    "id": "bio_int_overloader",
+    "type": "bionic",
+    "name": { "str": "Neural Overloader" },
+    "description": "Your brain is constantly maintained by neural repair drones, boosting mental abilities by 50%, at the cost of significantly increasing your metabolism.",
+    "occupied_bodyparts": [ [ "head", 2 ] ],
+    "enchantments": [ "ENCH_INT_OVERLOAD" ],
+    "flags": [ "BIONIC_NPC_USABLE" ]
   }
 ]

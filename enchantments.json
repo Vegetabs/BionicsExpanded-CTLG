@@ -43,5 +43,14 @@
     "condition": "ALWAYS",
     "emitter": "emit_VDA_insecticide",
     "intermittent_activation": { "effects": [ { "frequency": "1 s", "spell_effects": [ { "id": "SPELL_VDA_INSECTICIDE" } ] } ] }
+  },
+  {
+    "type": "enchantment",
+    "id": "ENCH_INT_OVERLOAD",
+    "condition": "ALWAYS",
+    "values": [
+      { "value": "INTELLIGENCE", "multiply": 0.5 },
+      { "value": "METABOLISM", "multiply": 0.5 }
+    ]
   }
 ]
