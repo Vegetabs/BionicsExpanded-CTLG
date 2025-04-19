@@ -5,6 +5,7 @@
 The current implemented bionics include:
 - Chemical Synthesis CBM
 - Dragon's Breath CBM
+- Neural Overloader CBM
 - Variable Dispersion Arrays CBM
 
 ## Installation Instructions
