@@ -5,7 +5,7 @@
     "name": "Bionics Expanded",
     "authors": [ "Vegetabs" ],
     "maintainers": [ "Vegetabs" ],
-    "description": "A collection of various CBMs currently contains a variety of gas-based military bionics.",
+    "description": "A collection of various (hopefully) interesting CBMs.",
     "category": "misc_additions",
     "dependencies": [ "tlg" ]
   }
