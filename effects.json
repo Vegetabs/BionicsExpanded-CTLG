@@ -54,7 +54,7 @@
     "type": "effect_type",
     "id": "effect_int_overload_good",
     "name": [ "Synthetic Neural Lattice" ],
-    "desc": [ "Your brain is enhanced by a tapestry of neural drones, the constellation of drones singing in harmony." ],
+    "desc": [ "Your brain is enhanced by a network of neural drones." ],
     "enchantments": [ "ENCH_INT_OVERLOAD_GOOD" ]
   },
   {
