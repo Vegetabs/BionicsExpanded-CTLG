@@ -65,8 +65,10 @@
     "enchantments": [ "ENCH_INT_OVERLOAD_BAD" ],
     "base_mods": {
       "pain_amount": [5],
-      "pain_chance": [2],
-      "pain_tick": [5]
+      "pain_min": [5],
+      "pain_max": [5],
+      "pain_max_val": [50],
+      "pain_tick": [60]
     }
   }
 ]
