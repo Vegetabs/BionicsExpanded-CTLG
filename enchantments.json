@@ -46,11 +46,20 @@
   },
   {
     "type": "enchantment",
-    "id": "ENCH_INT_OVERLOAD",
+    "id": "ENCH_INT_OVERLOAD_GOOD",
     "condition": "ALWAYS",
     "values": [
       { "value": "INTELLIGENCE", "multiply": 0.5 },
       { "value": "METABOLISM", "multiply": 0.5 }
+    ]
+  },
+  {
+    "type": "enchantment",
+    "id": "ENCH_INT_OVERLOAD_BAD",
+    "condition": "ALWAYS",
+    "values": [
+      { "value": "INTELLIGENCE", "multiply": -0.5 },
+      { "value": "PERCEPTION", "multiply": -0.25 }
     ]
   }
 ]
