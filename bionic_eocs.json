@@ -1,6 +1,26 @@
 [
   {
     "type": "effect_on_condition",
+    "id": "EOC_BIO_int_overloader_activated",
+    "effect": [
+      { "u_lose_effect": "effect_int_overload_bad" },
+      { "u_add_effect": "effect_int_overload_good", "duration": "PERMANENT" },
+      { "u_message": "The tapestry of your neural lattice forms.", "type": "good" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BIO_int_overloader_deactivated",
+    "effect": [
+      { "u_lose_effect": "effect_int_overload_good" },
+      { "u_message": "Your neural lattice collapses!", "type": "bad" },
+      { "u_add_effect": "stunned", "duration": 1 },
+      { "u_add_effect": "downed", "duration": 1, "force": true },
+      { "u_add_effect": "effect_int_overload_bad", "duration": "PERMANENT" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
     "id": "EOC_BIO_dragon_breath_activated",
     "effect": [
       { "run_eocs": "EOC_check_user_input" },
