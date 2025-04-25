@@ -30,9 +30,14 @@
     "id": "bio_int_overloader",
     "type": "bionic",
     "name": { "str": "Neural Overloader" },
-    "description": "Your brain is constantly maintained by neural repair drones, boosting mental abilities by 50%, at the cost of significantly increasing your metabolism.",
+    "description": "When powered, a swarm of neural drones will optimize the functionality of your brain, boosting mental abilities by 50%, at the cost of significantly increasing your metabolism and bionic power. Halting this process will have severe consequences for the user.",
     "occupied_bodyparts": [ [ "head", 2 ] ],
-    "enchantments": [ "ENCH_INT_OVERLOAD" ],
-    "flags": [ "BIONIC_NPC_USABLE" ]
+    "flags": [ "BIONIC_SLEEP_FRIENDLY", "BIONIC_SHOCKPROOF", "BIONIC_TOGGLED", "BIONIC_NPC_USABLE" ],
+    "act_cost": "10 J",
+    "react_cost": "10 J",
+    "time": "1 s",
+    "activated_on_install": true,
+    "activated_eocs": [ "EOC_BIO_int_overloader_activated" ],
+    "deactivated_eocs": [ "EOC_BIO_int_overloader_deactivated" ]
   }
 ]
