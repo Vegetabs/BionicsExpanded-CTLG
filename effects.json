@@ -49,5 +49,24 @@
     "type": "effect_type",
     "id": "give_emit_insecticide",
     "enchantments": [ "ENCH_EMIT_INSECTICIDE" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_int_overload_good",
+    "name": [ "Synthetic Neural Lattice" ],
+    "desc": [ "Your brain is enhanced by a tapestry of neural drones, the constellation of drones singing in harmony." ],
+    "enchantments": [ "ENCH_INT_OVERLOAD_GOOD" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_int_overload_bad",
+    "name": [ "Overstimulation" ],
+    "desc": [ "Your mind fractures into a discordant mess, unable to keep up with an overload of information." ],
+    "enchantments": [ "ENCH_INT_OVERLOAD_BAD" ],
+    "base_mods": {
+      "pain_amount": [5],
+      "pain_chance": [2],
+      "pain_tick": [5]
+    }
   }
 ]
