@@ -68,7 +68,9 @@
       "pain_min": [5],
       "pain_max": [5],
       "pain_max_val": [50],
-      "pain_tick": [60]
+      "pain_tick": [60],
+      "vomit_chance": [5],
+      "vomit_tick": [300]
     }
   }
 ]
