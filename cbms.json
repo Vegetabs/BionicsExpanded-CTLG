@@ -38,7 +38,7 @@
     "type": "BIONIC_ITEM",
     "name": { "str": "Neural Overloader CBM" },
     "looks_like": "bio_int_enhancer",
-    "description": "A module containing various neural repair drones that are implanted in the user's brain, greatly improving their cognitive abilities at the cost of increasing their metabolism.",
+    "description": "A module containing various neural drones that are implanted in the user's brain, greatly improving their cognitive abilities at the cost of increasing their metabolism.",
     "price": "10000 USD",
     "price_postapoc": "175 USD",
     "difficulty": 8
