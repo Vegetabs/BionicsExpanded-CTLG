@@ -59,7 +59,8 @@
     "condition": "ALWAYS",
     "values": [
       { "value": "INTELLIGENCE", "multiply": -0.5 },
-      { "value": "PERCEPTION", "multiply": -0.25 }
+      { "value": "PERCEPTION", "multiply": -0.25 },
+      { "value": "METABOLISM", "multiply": 0.5 }
     ]
   }
 ]
