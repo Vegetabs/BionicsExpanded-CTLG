@@ -23,6 +23,7 @@
     "name": { "str": "Chemical Synthesizer" },
     "description": "When active, this bionic will allow the user to begin manufacturing and storing certain chemicals over time. Extended chemical synthesizing may lead to adverse health effects for the user.",
     "occupied_bodyparts": [ [ "torso", 10 ] ],
+    "encumbrance": [ [ "torso", 5 ] ],
     "activated_eocs": [ "EOC_BIO_chem_factory_activated" ],
     "act_cost": "5 kJ"
   },
