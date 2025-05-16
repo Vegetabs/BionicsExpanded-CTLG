@@ -49,8 +49,8 @@
     "description": "When powered, the user will be able to use an adaptable integrated drill arm, enabling them to excavate almost any terrain.",
     "occupied_bodyparts": [ [ "arm_r", 10 ], [ "arm_l", 10 ], [ "hand_r", 3 ], [ "hand_l", 3 ] ],
     "encumbrance": [ [ "arm_r", 5 ], [ "arm_l", 5 ] ],
-    "act_cost": "100 J",
-    "react_cost": "100 J",
+    "act_cost": "50 J",
+    "react_cost": "50 J",
     "time": "1 s",
     "fake_weapon": "bio_drill_arms_weapon",
     "flags": [ "BIONIC_TOGGLED", "BIONIC_WEAPON", "BIONIC_NPC_USABLE" ]
