@@ -42,5 +42,16 @@
     "price": "10000 USD",
     "price_postapoc": "175 USD",
     "difficulty": 8
+  },
+  {
+    "id": "bio_drill_arm",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Drill Arm CBM" },
+    "looks_like": "bio_int_enhancer",
+    "description": "An adaptable drill designed to be integrated into the users' arms, allowing them to excavate almost any terrain.",
+    "price": "5000 USD",
+    "price_postapoc": "100 USD",
+    "difficulty": 8
   }
 ]
