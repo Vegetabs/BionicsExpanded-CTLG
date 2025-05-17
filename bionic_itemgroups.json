@@ -103,7 +103,8 @@
                 [ "bio_chem_factory", 10 ],
                 [ "bio_dragon_breath", 10 ],
                 [ "bio_vda", 10 ],
-                [ "bio_int_overloader", 10 ]
+                [ "bio_int_overloader", 10 ],
+                [ "bio_drill_arm", 10 ]
             ]
         }
     },
@@ -181,7 +182,8 @@
                 [ "bio_chem_factory", 10 ],
                 [ "bio_dragon_breath", 10 ],
                 [ "bio_vda", 10 ],
-                [ "bio_int_overloader", 10 ]
+                [ "bio_int_overloader", 10 ],
+                [ "bio_drill_arm", 10 ]
             ]
         }
     }
