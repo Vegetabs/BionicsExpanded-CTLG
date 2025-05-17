@@ -1,18 +1,18 @@
 [
-    {
-        "type": "GENERIC",
-        "id": "bio_drill_arms_weapon",
-        "name": { "str": "Integrated Drill Arms" },
-        "description": "Both of your arms have been converted to drills.",
-        "to_hit": { "grip": "weapon", "length": "hand", "surface": "any", "balance": "clumsy" },
-        "weight": "1 kg",
-        "volume": "2 L",
-        "longest_side": "50 cm",
-        "color": "light_gray",
-        "symbol": "=",
-        "material": "steel",
-        "use_action": [ "JACKHAMMER" ],
-        "flags": [ "BIONIC_WEAPON", "UNBREAKABLE_MELEE", "BIONIC_WEAPON_MELEE", "TRADER_AVOID", "CONDUCTIVE", "DIG_TOOL" ],
-        "melee_damage": { "bash": 10 }
-    }
+  {
+    "type": "GENERIC",
+    "id": "bio_drill_arms_weapon",
+    "name": { "str": "Integrated Drill Arms" },
+    "description": "Both of your arms have been converted to drills.",
+    "to_hit": { "grip": "weapon", "length": "hand", "surface": "any", "balance": "clumsy" },
+    "weight": "1 kg",
+    "volume": "2 L",
+    "longest_side": "50 cm",
+    "color": "light_gray",
+    "symbol": "=",
+    "material": "steel",
+    "use_action": ["JACKHAMMER"],
+    "flags": [ "BIONIC_WEAPON", "UNBREAKABLE_MELEE", "BIONIC_WEAPON_MELEE", "TRADER_AVOID", "CONDUCTIVE", "DIG_TOOL" ],
+    "melee_damage": { "bash": 10 }
+  }
 ]
