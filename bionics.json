@@ -53,6 +53,15 @@
     "react_cost": "50 J",
     "time": "1 s",
     "fake_weapon": "bio_drill_arms_weapon",
-    "flags": [ "BIONIC_TOGGLED", "BIONIC_WEAPON", "BIONIC_NPC_USABLE" ]
+    "flags": [ "BIONIC_TOGGLED", "BIONIC_WEAPON" ]
+  },
+  {
+    "id": "bio_reinforced_hands",
+    "type": "bionic",
+    "name": { "str": "Reinforced Hands" },
+    "description": "test",
+    "occupied_bodyparts": [ [ "hand_r", 2 ], [ "hand_l", 2 ] ],
+    "enchantments": [ { "condition": "ACTIVE", "values": [ {"value": "THROW_STR", "add": 50 } ] } ],
+    "flags": [ "BIONIC_NPC_USABLE" ]
   }
 ]
