@@ -7,6 +7,7 @@
     "maintainers": [ "Vegetabs" ],
     "description": "A collection of various (hopefully) interesting CBMs.",
     "category": "misc_additions",
+    "//compatibility": [ "tlg-experimental" ],
     "dependencies": [ "tlg" ]
   }
 ]
