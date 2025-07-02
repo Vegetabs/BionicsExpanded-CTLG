@@ -65,7 +65,6 @@
     "react_cost": "3 J",
     "act_cost": "1 J",
     "time": "1 s",
-    "activated_on_install": true,
     "trigger_cost": "1 J",
     "enchantments": [
       {
