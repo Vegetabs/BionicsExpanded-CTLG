@@ -54,5 +54,30 @@
     "time": "1 s",
     "fake_weapon": "bio_drill_arms_weapon",
     "flags": [ "BIONIC_TOGGLED", "BIONIC_WEAPON", "BIONIC_NPC_USABLE" ]
+  },
+  {
+    "id": "bio_accelerator",
+    "type": "bionic",
+    "name": { "str": "Bio Accelerator Unit" },
+    "description": "Your digestive system has been outfitted series of filters and processors, allowing you to acceleate the natural regenerative process and provides boosts of energy, at the cost of needing to consume more food and water.",
+    "occupied_bodyparts": [ [ "torso", 15 ] ],
+    "flags": [ "BIONIC_TOGGLED", "BIONIC_SLEEP_FRIENDLY" ],
+    "react_cost": "3 J",
+    "act_cost": "1 J",
+    "time": "1 s",
+    "trigger_cost": "1 J",
+    "enchantments": [
+      {
+        "condition": "ACTIVE",
+        "values": [
+          { "value": "HUNGER", "multiply": 0.25 },
+          { "value": "THIRST", "multiply": 0.25 },
+          { "value": "METABOLISM", "multiply": 0.666 },
+          { "value": "CARDIO_MULTIPLIER", "multiply": 0.1 },
+          { "value": "MENDING_MODIFIER", "multiply": 0.333 },
+          { "value": "REGEN_HP", "multiply": 0.333 }
+        ]
+      }
+    ]
   }
 ]
