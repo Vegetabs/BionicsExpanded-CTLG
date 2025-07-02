@@ -3,6 +3,7 @@
 
 ## Content
 The current implemented bionics include:
+- Bio Accelerator Unit CBM
 - Chemical Synthesis CBM
 - Dragon's Breath CBM
 - Drill Arms CBM
