@@ -55,15 +55,15 @@
     "difficulty": 8
   },
   {
-        "id": "bio_accelerator",
-        "copy-from": "bionic_general_npc_usable",
-        "type": "BIONIC_ITEM",
-        "name": { "str": "Bio accelerator Unit CBM" },
-        "looks_like": "bio_int_enhancer",
-        "description": "A series of filters and processors that is implanted in the user's digestive system, allowing them to acceleate the natural regenerative process and provides boosts of energy, at the cost of needing to consume more food and water.",
-        "price": "8500 USD",
-        "price_postapoc": "50 USD",
-        "weight": "1500 g",
-        "difficulty": 6
-    }
+    "id": "bio_accelerator",
+    "copy-from": "bionic_general_npc_usable",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Bio Accelerator Unit CBM" },
+    "looks_like": "bio_int_enhancer",
+    "description": "A series of filters and processors that is implanted in the user's digestive system, allowing them to acceleate the natural regenerative process and provides boosts of energy, at the cost of needing to consume more food and water.",
+    "price": "8500 USD",
+    "price_postapoc": "50 USD",
+    "weight": "1500 g",
+    "difficulty": 6
+  }
 ]
