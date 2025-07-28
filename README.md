@@ -14,10 +14,6 @@ The current implemented bionics include:
 1. Download the src code in the latest mod release
 2. Unzip the file in the 'data\mods' directory
 
-## Known Issues
-1. Spells cast through the enchantment 'intermittent_activation' feature sometimes activate at irregular times. I'm pretty sure this one isn't my fault, but it ultimately isn't ***that*** impactful to regular gameplay if you don't know the intended synthesis times.
-2. The vomit effect from 'effect_int_overload_bad' is too weak and most likely needs to be rebalanced.
-
 ## FAQ
 - **Q1**: I'm trying to use the Dragon's Breath/VDA bionics, and it's saying, "Gas reserves are too low!" What do I do?
     - **A1**: All gas-based bionics require the ***Chemical Synthesizer*** bionic to function, as they utilise gas reserves within the user's body to function.
