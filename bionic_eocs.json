@@ -24,11 +24,11 @@
     "id": "EOC_BIO_dragon_breath_activated",
     "effect": [
       { "run_eocs": "EOC_check_user_input" },
-      { "run_eoc_with": "EOC_input_validation", "variables": { "num_gas_required": "5" } },
+      { "run_eocs": "EOC_input_validation", "variables": { "num_gas_required": "5" } },
       {
         "if": { "math": [ "u_enough_in_reserve", "==", "true" ] },
         "then": [
-          { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": { "u_val": "cur_gas_reserve" }, "operation": "-=", "modifier": "5" } },
+          { "run_eocs": "mod_reserves", "variables": { "reserve_id": { "u_val": "cur_gas_reserve" }, "operation": "-=", "modifier": "5" } },
           {
             "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
             "then": { "set_string_var": "SPELL_DRAGON_BREATH_TEAR_GAS", "target_var": { "u_val": "cur_DB_spell" } }
@@ -68,7 +68,7 @@
     "effect": [
       { "run_eocs": "refund_power" },
       { "run_eocs": "EOC_check_user_input" },
-      { "run_eoc_with": "EOC_input_validation", "variables": { "num_gas_required": "1" } },
+      { "run_eocs": "EOC_input_validation", "variables": { "num_gas_required": "1" } },
       {
         "if": { "math": [ "u_enough_in_reserve", "==", "true" ] },
         "then": [
@@ -184,7 +184,7 @@
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
       { "u_mod_healthy": -5, "cap": -250 },
-      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "+=", "modifier": "1" } }
+      { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "+=", "modifier": "1" } }
     ]
   },
   {
@@ -201,7 +201,7 @@
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
       { "u_mod_healthy": -5, "cap": -250 },
-      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "+=", "modifier": "1" } }
+      { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "+=", "modifier": "1" } }
     ]
   },
   {
@@ -218,7 +218,7 @@
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
       { "u_mod_healthy": -5, "cap": -250 },
-      { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "+=", "modifier": "1" } }
+      { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "+=", "modifier": "1" } }
     ]
   },
   {
@@ -227,7 +227,7 @@
     "condition": { "math": [ "u_val('power')", ">=", "energy('15 kJ')" ] },
     "effect": {
       "if": { "u_has_effect": "reserve_tear_gas" },
-      "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
+      "then": [ { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
       "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Tear gas reserves are empty: VDA shutting down.", "type": "warning" } ]
     },
     "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down.", "type": "warning" } ]
@@ -238,7 +238,7 @@
     "condition": { "math": [ "u_val('power')", ">=", "energy('15 kJ')" ] },
     "effect": {
       "if": { "u_has_effect": "reserve_fungicide" },
-      "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
+      "then": [ { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
       "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Fungicide reserves are empty: VDA shutting down.", "type": "warning" } ]
     },
     "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down.", "type": "warning" } ]
@@ -249,7 +249,7 @@
     "condition": { "math": [ "u_val('power')", ">=", "energy('15 kJ')" ] },
     "effect": {
       "if": { "u_has_effect": "reserve_insecticide" },
-      "then": [ { "run_eoc_with": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
+      "then": [ { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "-=", "modifier": "1" } }, { "math": [ "u_val('power')", "-=", "energy('15 kJ')" ] } ],
       "else": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Insecticide reserves are empty: VDA shutting down.", "type": "warning" } ]
     },
     "false_effect": [ { "run_eocs": "EOC_BIO_VDA_deactivated" }, { "u_message": "Bionic power is too low: VDA shutting down.", "type": "warning" } ]
@@ -258,7 +258,7 @@
     "type": "effect_on_condition",
     "id": "mod_reserves",
     "effect": [
-      { "run_eoc_with": "EOC_check_reserve_intensity", "variables": { "effect_id": { "context_val": "reserve_id" } } },
+      { "run_eocs": "EOC_check_reserve_intensity", "variables": { "effect_id": { "context_val": "reserve_id" } } },
       {
         "if": { "compare_string": [ { "context_val": "operation" }, "+=" ] },
         "then": [ 
@@ -332,7 +332,7 @@
     "effect": [
       { "math": [ "u_latest_input_valid", "=", "true" ] },
       { "run_eocs": [ "EOC_set_cur_gas_reserve" ] },
-      { "run_eoc_with": "EOC_check_reserve_intensity", "variables": { "effect_id": { "u_val": "cur_gas_reserve" } } },
+      { "run_eocs": "EOC_check_reserve_intensity", "variables": { "effect_id": { "u_val": "cur_gas_reserve" } } },
       {
         "if": { "math": [ "u_cur_intensity", ">=", "_num_gas_required" ] },
         "then": { "math": [ "u_enough_in_reserve", "=", "true" ] },
