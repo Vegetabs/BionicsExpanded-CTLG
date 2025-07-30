@@ -137,13 +137,7 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_synth_validation",
-    "condition": {
-      "or": [
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] }
-      ] 
-    },
+    "condition": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a", "b", "c" ] },
     "effect": [
       {
         "if": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
@@ -322,13 +316,7 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_input_validation",
-    "condition": { 
-      "or": [
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "a" ] },
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "b" ] },
-        { "compare_string": [ { "u_val": "cur_gas_mode" }, "c" ] }
-      ] 
-    },
+    "condition": { "compare_string": [ { "u_val": "cur_gas_mode" }, "a", "b", "c" ] },
     "effect": [
       { "math": [ "u_latest_input_valid", "=", "true" ] },
       { "run_eocs": [ "EOC_set_cur_gas_reserve" ] },
