@@ -177,7 +177,7 @@
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
-      { "u_mod_healthy": -5, "cap": -250 },
+      { "math": [ "u_health()", "-=", "5" ] },
       { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_tear_gas", "operation": "+=", "modifier": "1" } }
     ]
   },
@@ -194,7 +194,7 @@
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
-      { "u_mod_healthy": -5, "cap": -250 },
+      { "math": [ "u_health()", "-=", "5" ] },
       { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_fungicide", "operation": "+=", "modifier": "1" } }
     ]
   },
@@ -211,7 +211,7 @@
     },
     "false_effect": [
       { "math": [ "u_val('power')", "-=", "energy('10 kJ')" ] },
-      { "u_mod_healthy": -5, "cap": -250 },
+      { "math": [ "u_health()", "-=", "5" ] },
       { "run_eocs": "mod_reserves", "variables": { "reserve_id": "reserve_insecticide", "operation": "+=", "modifier": "1" } }
     ]
   },
