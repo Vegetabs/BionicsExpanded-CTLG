@@ -277,7 +277,7 @@
           "duration": "PERMANENT",
           "intensity": { "u_val": "cur_intensity" }
         },
-        "else": { "u_lose_effect": { "context_val": "reserve_id" } }
+        "else": { "u_lose_effect": [ { "context_val": "reserve_id" } ] }
       }
     ]
   },
